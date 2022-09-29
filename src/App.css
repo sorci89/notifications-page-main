@@ -48,9 +48,7 @@ select {
 }
 
 body{
-  background-color: var(--whitesmoke);
-  
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 /* .App {

@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from '../notifications/notifications.module.css';
+import {GoPrimitiveDot} from 'react-icons/go'
 
 
 const Notifications = ({notifications, countUnread}) => {
@@ -19,12 +20,12 @@ const Notifications = ({notifications, countUnread}) => {
                     <span className={styles.userName}>{notification.userName}</span>{" "}
                     <span className={styles.action}>{notification.action}</span>{" "}
                     {notification.type === "withLink" && <span className={styles.link}>{notification.link}</span>}
-                    {notification.isRead === false && <div className={styles.orangeDot}>orange dot</div>}
+                    {notification.isRead === false && <GoPrimitiveDot className={styles.orangeDot} />}
                     <p className={styles.time}>{notification.time}</p>
                     {notification.type === "withMessage" && <p className={styles.privatMessage}>{notification.message}</p>}
                     {notification.type === "withPicture" && (
                         <div className={styles.referredPicture}>
-                        <img src={notification.picture} alt="Referenced pic" />
+                            <img src={notification.picture} alt="Referenced pic" />
                         </div>
                     )}
                 </div>
