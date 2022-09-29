@@ -10,25 +10,25 @@ const Notifications = ({notifications, countUnread}) => {
       };
     
     return (
-        <div>
+        <div className={styles.notificationsContainer}>
             {notifications.map((notification) => (
-        <div onClick={() => markOneRead({ notification })}>
-          <div>
-            <img src={notification.userProfile} alt="User profile" />
-          </div>
-          <span>{notification.userName}</span>{" "}
-          <span>{notification.action}</span>{" "}
-          {notification.type === "withLink" && <span>{notification.link}</span>}
-          {notification.isRead === false && <div>orange dot</div>}
-          <p>{notification.time}</p>
-          {notification.type === "withMessage" && <p>{notification.message}</p>}
-          {notification.type === "withPicture" && (
-            <div>
-              <img src={notification.picture} alt="User profile" />
-            </div>
-          )}
-        </div>
-      ))}
+                <div className={styles.notificationCard} onClick={() => markOneRead({ notification })}>
+                    <div className={styles.userProfileContainer}>
+                        <img src={notification.userProfile} alt="User profile" />
+                    </div>
+                    <span className={styles.userName}>{notification.userName}</span>{" "}
+                    <span className={styles.action}>{notification.action}</span>{" "}
+                    {notification.type === "withLink" && <span className={styles.link}>{notification.link}</span>}
+                    {notification.isRead === false && <div className={styles.orangeDot}>orange dot</div>}
+                    <p className={styles.time}>{notification.time}</p>
+                    {notification.type === "withMessage" && <p className={styles.privatMessage}>{notification.message}</p>}
+                    {notification.type === "withPicture" && (
+                        <div className={styles.referredPicture}>
+                        <img src={notification.picture} alt="Referenced pic" />
+                        </div>
+                    )}
+                </div>
+            ))}
         </div>
     )
 }
