@@ -1,6 +1,7 @@
 export const notifications = [
   {
     id: 1,
+    isRead: false,
     type: "withLink",
     userName: "Mark Webber",
     userProfile: "/assets/images/avatar-mark-webber.webp",
@@ -10,6 +11,7 @@ export const notifications = [
   },
   {
     id: 2,
+    isRead: false,
     type: "noAttachment",
     userName: "Angela Gray",
     userProfile: "/assets/images/avatar-angela-gray.webp",
@@ -18,6 +20,7 @@ export const notifications = [
   },
   {
     id: 3,
+    isRead: false,
     type: "withLink",
     userName: "Jacob Thompson",
     userProfile: "/assets/images/avatar-jacob-thompson.webp",
@@ -27,6 +30,7 @@ export const notifications = [
   },
   {
     id: 4,
+    isRead: true,
     type: "withMessage",
     userName: "Rizky Hasanuddin",
     userProfile: "/assets/images/avatar-rizky-hasanuddin.webp",
@@ -37,6 +41,7 @@ export const notifications = [
   },
   {
     id: 5,
+    isRead: true,
     type: "withPicture",
     userName: "Kimberly Smith",
     userProfile: "/assets/images/avatar-kimberly-smith.webp",
@@ -46,6 +51,7 @@ export const notifications = [
   },
   {
     id: 6,
+    isRead: true,
     type: "withLink",
     userName: "Nathan Peterson",
     userProfile: "/assets/images/avatar-nathan-peterson.webp",
@@ -55,6 +61,7 @@ export const notifications = [
   },
   {
     id: 7,
+    isRead: true,
     type: "withLink",
     userName: "Anna Kim",
     userProfile: "/assets/images/avatar-anna-kim.webp",
