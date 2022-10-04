@@ -13,21 +13,24 @@ const Notifications = ({notifications, countUnread}) => {
     return (
         <div className={styles.notificationsContainer}>
             {notifications.map((notification) => (
-                <div className={styles.notificationCard} onClick={() => markOneRead({ notification })}>
+                <div className={notification.isRead === false ? styles.notificationCardNew : styles.notificationCard} onClick={() => markOneRead({ notification })}>
                     <div className={styles.userProfileContainer}>
-                        <img src={notification.userProfile} alt="User profile" />
+                    <img className={styles.userProfile} src={notification.userProfile} alt="User profile" />
                     </div>
-                    <span className={styles.userName}>{notification.userName}</span>{" "}
-                    <span className={styles.action}>{notification.action}</span>{" "}
-                    {notification.type === "withLink" && <span className={styles.link}>{notification.link}</span>}
-                    {notification.isRead === false && <GoPrimitiveDot className={styles.orangeDot} />}
-                    <p className={styles.time}>{notification.time}</p>
-                    {notification.type === "withMessage" && <p className={styles.privatMessage}>{notification.message}</p>}
-                    {notification.type === "withPicture" && (
-                        <div className={styles.referredPicture}>
-                            <img src={notification.picture} alt="Referenced pic" />
-                        </div>
-                    )}
+                    <div className={styles.notificationCardTextContent}>
+                        <span className={styles.userName}>{notification.userName}</span>{" "}
+                        <span className={styles.action}>{notification.action}</span>{" "}
+                        {notification.type === "withLink" && <span className={styles.link}>{notification.link}</span>}
+                        {notification.isRead === false && <GoPrimitiveDot className={styles.orangeDot} />}
+                        <p className={styles.time}>{notification.time}</p>
+                        {notification.type === "withMessage" && <p className={styles.privatMessage}>{notification.message}</p>}
+                    </div>
+                        {notification.type === "withPicture" && (
+                            <div className={styles.referredPictureContainer}>
+                                <img className={styles.referredPicture} src={notification.picture} alt="Referenced pic" />
+                            </div>
+                        )}
+                    
                 </div>
             ))}
         </div>

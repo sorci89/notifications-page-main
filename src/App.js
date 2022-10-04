@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./App.css";
+import styles from "./app.module.css";
 import { data } from "./data/data";
 import Notifications from "./components/notifications/Notifications";
 
@@ -30,14 +30,20 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <p>Notifications</p>
-      <div>{nbrOfUnread}</div>
-      {nbrOfUnread === 0 ? (
-        <div onClick={() => markAllUnRead()}>Mark all as unread</div>
-      ) : (
-        <div onClick={() => markAllRead()}>Mark all as read</div>
-      )}
+    <div className={styles.container}>
+      <div className={styles.notificationHeadline}>
+        <p className={styles.notificationTitle}>Notifications</p>
+        <div className={styles.notificationsNumber}>{nbrOfUnread}</div>
+        {nbrOfUnread === 0 ? (
+          <div className={styles.allMarker} onClick={() => markAllUnRead()}>
+            Mark all as unread
+          </div>
+        ) : (
+          <div className={styles.allMarker} onClick={() => markAllRead()}>
+            Mark all as read
+          </div>
+        )}
+      </div>
       <Notifications notifications={notifications} countUnread={countUnread} />
     </div>
   );

@@ -1,0 +1,67 @@
+
+.orangeDot {
+    color: var(--red);
+}
+
+.notificationCard,
+.notificationCardNew{
+    border-radius: 10px;
+    display: flex;
+    margin-bottom: 15px;
+    padding: 15px;
+}
+
+.notificationCardNew{
+ background-color: var(--very-light-grayish-blue);
+}
+.userProfile{
+    width:35px;
+}
+.referredPicture{
+    width: 39px;
+    padding: 2px;
+    border-radius: 10px;
+}
+.referredPicture:hover{
+    padding: 0;
+    border: 2px solid var(--light-grayish-blue-2);
+}
+.referredPictureContainer{
+    margin-left: 10px;
+}
+.notificationCardTextContent{
+    margin-right: auto;
+    padding-left: 10px;
+}
+
+.time{
+    color: var(--grayish-blue);
+    font-weight: normal;
+    width: 100%;
+}
+
+.privatMessage{
+    margin-top: 10px;
+    padding: 15px;
+    width: 100%;
+    border: 1.5px solid var(--light-grayish-blue-2);
+    border-radius: 5px;
+}
+.privatMessage:hover{
+
+    background-color: var(--light-grayish-blue-2);
+}
+
+.link{
+    font-weight: 800;
+}
+
+.link:hover,
+.userName:hover{
+    color: var(--blue);
+}
+
+.userName{
+    color: var(--very-dark-blue);
+    font-weight: 800;
+}
