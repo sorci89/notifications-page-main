@@ -63,7 +63,6 @@ body{
   margin: auto;
   padding: 30px 10px;
   max-width: 750px;
-  height: 100vh;
   overflow-y: auto;
   background-color: var(--white);
 }
@@ -71,7 +70,7 @@ body{
 @media screen and (min-width: 751px) {
   .container {
     margin: 50px auto;
-    padding: 30px 20px;
+    padding: 30px 20px 0px;
     border-radius: 10px;
   }
 }
