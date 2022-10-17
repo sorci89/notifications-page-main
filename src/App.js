@@ -4,8 +4,7 @@ import { data } from "./data/data";
 import Notifications from "./components/notifications/Notifications";
 
 function App() {
-  const notifications = [...data];
-
+  const [notifications, setNotifications] = useState(data);
   const [nbrOfUnread, setNbrOfUnread] = useState(Number);
 
   const countUnread = () => {
@@ -16,12 +15,12 @@ function App() {
   };
 
   const markAllUnRead = () => {
-    notifications.map((notification) => (notification.isRead = false));
+    setNotifications(notifications.map((notification) => ({ ...notification, isRead: false })));
     countUnread();
   };
 
   const markAllRead = () => {
-    notifications.map((notification) => (notification.isRead = true));
+    setNotifications(notifications.map((notification) => ({ ...notification, isRead: true })));
     countUnread();
   };
 
