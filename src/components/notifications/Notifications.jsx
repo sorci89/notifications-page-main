@@ -3,17 +3,15 @@ import styles from '../notifications/notifications.module.css';
 import {GoPrimitiveDot} from 'react-icons/go'
 
 
-const Notifications = ({notifications, countUnread}) => {
-
-    const markOneRead = ({ notification }) => {
-        notification.isRead = true;
-        countUnread();
-      };
-    
+const Notifications = ({notifications, toggleRead}) => {
     return (
         <div className={styles.notificationsContainer}>
             {notifications.map((notification) => (
-                <div className={notification.isRead === false ? styles.notificationCardNew : styles.notificationCard} onClick={() => markOneRead({ notification })}>
+                <div 
+                    className={notification.isRead === false ? styles.notificationCardNew : styles.notificationCard} 
+                    onClick={() => toggleRead(notification.id)}
+                    key={notification.id}
+                >
                     <div className={styles.userProfileContainer}>
                     <img className={styles.userProfile} src={notification.userProfile} alt="User profile" />
                     </div>
