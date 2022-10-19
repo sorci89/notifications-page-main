@@ -18,10 +18,10 @@ const Notifications = ({notifications, toggleRead}) => {
                     <div className={styles.notificationCardTextContent}>
                         <button className={styles.userName}>{notification.userName}</button>{" "}
                         <span className={styles.action}>{notification.action}</span>{" "}
-                        {notification.type === "withLink" && <button className={styles.link}>{notification.link}</button>}
+                        {notification.type === "withLink" && <a href="nolink" className={styles.link}>{notification.link}</a>}
                         {notification.isRead === false && <GoPrimitiveDot className={styles.orangeDot} />}
                         <p className={styles.time}>{notification.time}</p>
-                        {notification.type === "withMessage" && <p className={styles.privatMessage}>{notification.message}</p>}
+                        {notification.type === "withMessage" && <button className={styles.privatMessage}>{notification.message}</button>}
                     </div>
                         {notification.type === "withPicture" && (
                             <button className={styles.referredPictureContainer}>

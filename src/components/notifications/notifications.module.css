@@ -54,6 +54,8 @@
     width: 100%;
     border: 1.5px solid var(--light-grayish-blue-2);
     border-radius: 5px;
+    font-size: var(--base-font-size);
+    text-align: left;
 }
 .privatMessage:hover{
 
