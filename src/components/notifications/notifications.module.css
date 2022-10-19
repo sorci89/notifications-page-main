@@ -1,79 +1,85 @@
-.notificationCard:last-child{
-    margin-bottom: 0;
+.orange-dot {
+  color: var(--red);
 }
 
-.orangeDot {
-    color: var(--red);
+.notification-card,
+.notification-card-new {
+  border-radius: 10px;
+  display: flex;
+  margin-bottom: 15px;
+  padding: 15px;
 }
 
-.notificationCard,
-.notificationCardNew{
-    border-radius: 10px;
-    display: flex;
-    margin-bottom: 15px;
-    padding: 15px;
+.notification-card:last-child {
+  margin-bottom: 0;
 }
 
-.notificationCardNew{
- background-color: var(--very-light-grayish-blue);
-}
-.userProfileContainer{
-    flex-shrink: 0;
-    margin-right: 10px;
-    width:35px;
-}
-.userProfile{
-    height: auto;
-    width:100%;
-}
-.referredPicture{
-    width: 39px;
-    padding: 2px;
-    border-radius: 10px;
-}
-.referredPicture:hover{
-    padding: 0;
-    border: 2px solid var(--light-grayish-blue-2);
-}
-.referredPictureContainer{
-    margin-left: 10px;
-}
-.notificationCardTextContent{
-    margin-right: auto;
+.notification-card-new {
+  background-color: var(--very-light-grayish-blue);
 }
 
-.time{
-    color: var(--grayish-blue);
-    font-weight: normal;
-    width: 100%;
+.user-profile-container {
+  flex-shrink: 0;
+  margin-right: 10px;
+  width: 35px;
 }
 
-.privatMessage{
-    margin-top: 10px;
-    padding: 15px;
-    width: 100%;
-    border: 1.5px solid var(--light-grayish-blue-2);
-    border-radius: 5px;
-    font-size: var(--base-font-size);
-    text-align: left;
-}
-.privatMessage:hover{
-
-    background-color: var(--light-grayish-blue-2);
+.user-profile {
+  height: auto;
+  width: 100%;
 }
 
-.link{
-    font-weight: 800;
-    font-size: var(--base-font-size);
+.referred-picture {
+  width: 39px;
+  padding: 2px;
+  border-radius: 10px;
+}
+
+.referred-picture:hover {
+  padding: 0;
+  border: 2px solid var(--light-grayish-blue-2);
+}
+
+.referred-picture-container {
+  margin-left: 10px;
+}
+
+.notification-card-text-content {
+  margin-right: auto;
+}
+
+.time {
+  color: var(--grayish-blue);
+  font-weight: normal;
+  width: 100%;
+}
+
+.privat-message {
+  margin-top: 10px;
+  padding: 15px;
+  width: 100%;
+  border: 1.5px solid var(--light-grayish-blue-2);
+  border-radius: 5px;
+  font-size: var(--base-font-size);
+  text-align: left;
+}
+
+.privat-message:hover {
+  background-color: var(--light-grayish-blue-2);
+}
+
+.link {
+  font-weight: 800;
+  font-size: var(--base-font-size);
+}
+
+.user-name {
+  color: var(--very-dark-blue);
+  font-weight: 800;
+  font-size: var(--base-font-size);
 }
 
 .link:hover,
-.userName:hover{
-    color: var(--blue);
-}
-
-.userName{
-    color: var(--very-dark-blue);
-    font-weight: 800;
-    font-size: var(--base-font-size);
+.user-name:hover {
+  color: var(--blue);
 }

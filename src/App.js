@@ -29,11 +29,11 @@ function App() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.notificationHeadline}>
-        <p className={styles.notificationTitle}>Notifications</p>
-        <div className={styles.notificationsNumber}>{nbrOfUnread}</div>
+      <div className={styles["notification-headline"]}>
+        <p className={styles["notification-title"]}>Notifications</p>
+        <div className={styles["notifications-number"]}>{nbrOfUnread}</div>
         <button
-          className={styles.allMarker}
+          className={styles["all-marker"]}
           onClick={() => toggleRead(allToggled)}
         >
           {allToggled ? "Mark all as unread" : "Mark all as read"}
