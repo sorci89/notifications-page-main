@@ -7,14 +7,24 @@ function App() {
   const [notifications, setNotifications] = useState(data);
 
   const toggleRead = (value) => {
-    setNotifications(notifications.map((notification) => ({ ...notification, isRead: value })));
+    setNotifications(
+      notifications.map((notification) => ({ ...notification, isRead: value }))
+    );
   };
 
   const toggleOneAsRead = (id) => {
-    setNotifications(notifications.map((notification) => ({ ...notification, isRead: notification.id === id ? !notification.isRead : notification.isRead })));
-  }
+    setNotifications(
+      notifications.map((notification) => ({
+        ...notification,
+        isRead:
+          notification.id === id ? !notification.isRead : notification.isRead,
+      }))
+    );
+  };
 
-  const nbrOfUnread = notifications.filter(({ isRead }) => isRead === false).length;
+  const nbrOfUnread = notifications.filter(
+    ({ isRead }) => isRead === false
+  ).length;
   const allToggled = nbrOfUnread !== 0;
 
   return (
@@ -22,11 +32,17 @@ function App() {
       <div className={styles.notificationHeadline}>
         <p className={styles.notificationTitle}>Notifications</p>
         <div className={styles.notificationsNumber}>{nbrOfUnread}</div>
-          <div className={styles.allMarker} onClick={() => toggleRead(allToggled)}>
-            { allToggled ? 'Mark all as unread' : 'Mark all as read' }
-          </div>
+        <button
+          className={styles.allMarker}
+          onClick={() => toggleRead(allToggled)}
+        >
+          {allToggled ? "Mark all as unread" : "Mark all as read"}
+        </button>
       </div>
-      <Notifications notifications={notifications} toggleRead={toggleOneAsRead} />
+      <Notifications
+        notifications={notifications}
+        toggleRead={toggleOneAsRead}
+      />
     </div>
   );
 }

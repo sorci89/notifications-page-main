@@ -16,17 +16,17 @@ const Notifications = ({notifications, toggleRead}) => {
                         <img className={styles.userProfile} src={notification.userProfile} alt="User profile" />
                     </div>
                     <div className={styles.notificationCardTextContent}>
-                        <span className={styles.userName}>{notification.userName}</span>{" "}
+                        <button className={styles.userName}>{notification.userName}</button>{" "}
                         <span className={styles.action}>{notification.action}</span>{" "}
-                        {notification.type === "withLink" && <span className={styles.link}>{notification.link}</span>}
+                        {notification.type === "withLink" && <button className={styles.link}>{notification.link}</button>}
                         {notification.isRead === false && <GoPrimitiveDot className={styles.orangeDot} />}
                         <p className={styles.time}>{notification.time}</p>
                         {notification.type === "withMessage" && <p className={styles.privatMessage}>{notification.message}</p>}
                     </div>
                         {notification.type === "withPicture" && (
-                            <div className={styles.referredPictureContainer}>
+                            <button className={styles.referredPictureContainer}>
                                 <img className={styles.referredPicture} src={notification.picture} alt="Referenced pic" />
-                            </div>
+                            </button>
                         )}
                     
                 </li>
