@@ -1,3 +1,6 @@
+.notificationCard:last-child{
+    margin-bottom: 0;
+}
 
 .orangeDot {
     color: var(--red);
@@ -14,8 +17,14 @@
 .notificationCardNew{
  background-color: var(--very-light-grayish-blue);
 }
-.userProfile{
+.userProfileContainer{
+    flex-shrink: 0;
+    margin-right: 10px;
     width:35px;
+}
+.userProfile{
+    height: auto;
+    width:100%;
 }
 .referredPicture{
     width: 39px;
@@ -31,7 +40,6 @@
 }
 .notificationCardTextContent{
     margin-right: auto;
-    padding-left: 10px;
 }
 
 .time{

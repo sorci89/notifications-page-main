@@ -5,15 +5,15 @@ import {GoPrimitiveDot} from 'react-icons/go'
 
 const Notifications = ({notifications, toggleRead}) => {
     return (
-        <div className={styles.notificationsContainer}>
+        <ul ul className={styles.notificationsContainer}>
             {notifications.map((notification) => (
-                <div 
+                <li 
                     className={notification.isRead === false ? styles.notificationCardNew : styles.notificationCard} 
                     onClick={() => toggleRead(notification.id)}
                     key={notification.id}
                 >
                     <div className={styles.userProfileContainer}>
-                    <img className={styles.userProfile} src={notification.userProfile} alt="User profile" />
+                        <img className={styles.userProfile} src={notification.userProfile} alt="User profile" />
                     </div>
                     <div className={styles.notificationCardTextContent}>
                         <span className={styles.userName}>{notification.userName}</span>{" "}
@@ -29,9 +29,9 @@ const Notifications = ({notifications, toggleRead}) => {
                             </div>
                         )}
                     
-                </div>
+                </li>
             ))}
-        </div>
+        </ul>
     )
 }
 export default Notifications
