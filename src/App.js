@@ -4,47 +4,29 @@ import { data } from "./data/data";
 import Notifications from "./components/notifications/Notifications";
 
 function App() {
-  const notifications = [...data];
+  const [notifications, setNotifications] = useState(data);
 
-  const [nbrOfUnread, setNbrOfUnread] = useState(Number);
-
-  const countUnread = () => {
-    const unreadNotifications = notifications.filter(
-      (notification) => notification.isRead === false
-    );
-    setNbrOfUnread(unreadNotifications.length);
+  const toggleRead = (value) => {
+    setNotifications(notifications.map((notification) => ({ ...notification, isRead: value })));
   };
 
-  const markAllUnRead = () => {
-    notifications.map((notification) => (notification.isRead = false));
-    countUnread();
-  };
+  const toggleOneAsRead = (id) => {
+    setNotifications(notifications.map((notification) => ({ ...notification, isRead: notification.id === id ? !notification.isRead : notification.isRead })));
+  }
 
-  const markAllRead = () => {
-    notifications.map((notification) => (notification.isRead = true));
-    countUnread();
-  };
-
-  useEffect(() => {
-    countUnread();
-  }, []);
+  const nbrOfUnread = notifications.filter(({ isRead }) => isRead === false).length;
+  const allToggled = nbrOfUnread !== 0;
 
   return (
     <div className={styles.container}>
       <div className={styles.notificationHeadline}>
         <p className={styles.notificationTitle}>Notifications</p>
         <div className={styles.notificationsNumber}>{nbrOfUnread}</div>
-        {nbrOfUnread === 0 ? (
-          <div className={styles.allMarker} onClick={() => markAllUnRead()}>
-            Mark all as unread
+          <div className={styles.allMarker} onClick={() => toggleRead(allToggled)}>
+            { allToggled ? 'Mark all as unread' : 'Mark all as read' }
           </div>
-        ) : (
-          <div className={styles.allMarker} onClick={() => markAllRead()}>
-            Mark all as read
-          </div>
-        )}
       </div>
-      <Notifications notifications={notifications} countUnread={countUnread} />
+      <Notifications notifications={notifications} toggleRead={toggleOneAsRead} />
     </div>
   );
 }
